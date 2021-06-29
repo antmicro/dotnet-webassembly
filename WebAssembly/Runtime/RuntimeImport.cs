@@ -77,7 +77,7 @@ namespace WebAssembly.Runtime
                             if (getter == null)
                                 continue; // TODO: Throw an exception for missing getter.
 
-                            if (getter.Invoke(exports, Array.Empty<object>()) is not FunctionTable table)
+                            if (getter.Invoke(exports, ExtensionsHelper.Empty<object>()) is not FunctionTable table)
                                 continue; // TODO: Throw an exception for missing result.
 
                             yield return (native.Name, table);
